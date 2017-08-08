@@ -12,15 +12,14 @@ GIF OF RECOGNIZING IMAGE
 Please download and install all software and register for Unity & Vuforia accounts before attending the event.
 
 ## Table of content
-
 - [Installation and Account Registration](#installation-and-account-registration)
-
 - [Unity Project Setup](#unity-project-setup)
+- [Vuforia AR Camera Set Up](#vuforia-ar-camera-set-up)
+- [Vuforia License Key](#vuforia-license-key)
+- [Vuforia Target Image Database](#vuforia-target-image-database)
 
-- [Vuforia Target Setup](#vuforia-target-setup)
-    - [Extension](#extension)
-    - [Database](#database)
-- [Page setup](#page-setup)
+
+- [Target Image Database](#page-setup)
     - [Upload the page tree file](#upload-the-page-tree-file)
     - [Go to the import view](#go-to-the-import-view)
     - [Import the uploaded page tree file](#import-the-uploaded-page-tree-file)
@@ -29,7 +28,6 @@ Please download and install all software and register for Unity & Vuforia accoun
 
 
 ## Installation and Account Registration
-
 Install the following programs/packages and create accounts for Unity and Vuforia.  Unity Personal Version is a free beginner friendly development platform for 2D, 3D, VR and AR applications.  Note: When installing Unity 5.6, it will default to a Unity folder in program files.  If you have downloaded a previous version of Unity and want to keep it, rename the default folder name.  
 
 * [Unity 5.6 Installation](https://unity3d.com/unity/whats-new/unity-5.6.0)
@@ -66,21 +64,36 @@ When the ARCamera prefab is dragged into your scene or hierarchy, the gameobject
 
 ![AR Cam Setup 2](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/3_ARCamSetup_2.png) 
     
-
-
-
-## Vuforia Licence Key
-
-    Login
-    Add licensce key (development) , create app name, copy license key
+After clicking Open Vuforia Configuration, the Inspector view will show the Vuforia Configuration file where you will paste your Vuforia License Key     
     
-3.  Go back into Unity, drag AR kit, located in... 
-    Drag AR kit prefab into scene
-    click on kit in hiearchy to inspect properties
-    Vuforia behaviour component, click on edit configuration and paste the key into the App Licence Key text field
+![AR Cam Setup 3](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/3_ARCamSetup_3.png) 
 
-4.  Go back to Vuforia developer website , and click on Target Manager
-      click create image target database, images that your AR app will recognize,with devices selected
+## Vuforia License Key
+Log into the [Vuforia License Manager](https://developer.vuforia.com/license-manager) page  with the [Vuforia Account](https://developer.vuforia.com/user/register) you created.  Click on Add License Key to create a free key enabling your Unity application to use Vuforia's image recognition services up to a specified limit.
+
+![Vuforia License Key](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/4_licensekey.png) 
+
+Select Project Type: Development, create a name for the app, and click next to continue.
+
+![Vuforia License Key 2](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/4_licensekey_2.png)
+
+The next page will have the Vuforia license key for your app, which can be copied and pasted into Vuforia Configuration App License key text field in the Unity application. 
+
+![Vuforia License Key 3](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/4_licensekey_3.png)
+
+## Vuforia Target Image Database
+Go back to Vuforia License Manager page, click on Target Manager link, and click on Add Database button to set up a set of images your AR app will recognize.  Provide a name for the database of images that will be recoginzed by the app and make sure Type:Devices is selected.
+
+![Vuforia Target Images](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/5_TargetManager.png)
+![Vuforia Target Images 2](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/5_TargetManager_2.png)
+![Vuforia Target Images 3](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/5_TargetManager_3.png)
+
+When the database is created, click on the database link and click on Add Target Button to start adding the images to be recognized.  
+
+![Vuforia Target Images 3](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/5_TargetManager_4.png)
+
+
+with devices selected
       Now add a target image, which allows for a flat image, 3D image for recognition
       We will choose a 2D image for this example
       For good tracking and image recognition, Vuforia suggests the following, 
@@ -109,35 +122,7 @@ php -r "readfile('https://getcomposer.org/installer');" | php -- --filename=comp
 ```
 
 In order to tell composer what it should install, you have to create a basic `composer.json` file in the directory of you VHost. It should look similar to this one:
-```json
-{
-    "name": "vendor/mysite",
-    "description" : "My new TYPO3 web site",
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "repositories": [
-        { "type": "composer", "url": "https://composer.typo3.org/" }
-    ],
-    "require": {
-        "typo3/cms": "~8.7",
-        "aimeos/aimeos-typo3": "dev-master"
-    },
-    "extra": {
-        "typo3/cms": {
-            "cms-package-dir": "{$vendor-dir}/typo3/cms",
-            "web-dir": "htdocs"
-        }
-    },
-    "scripts": {
-        "post-install-cmd": [
-            "Aimeos\\Aimeos\\Custom\\Composer::install"
-        ],
-        "post-update-cmd": [
-            "Aimeos\\Aimeos\\Custom\\Composer::install"
-        ]
-    }
-}
-```
+
 It will install TYPO3 and the latest Aimeos TYPO3 extension in the `./htdocs/` directory. Afterwards, the Aimeos composer script will be executed which copies some required files and adds a link to the Aimeos extensions placed in the `./ext/` directory. To start installation, execute composer on the command line in the directory where your `composer.json` is stored:
 ```
 composer update
@@ -193,10 +178,6 @@ The page setup for an Aimeos web shop is easy if you import the [standard page t
 * The pages that will be imported are shown below
 * Click on the "Import" button that has appeared
 * Confirm to import the pages
-
-![Import the uploaded page tree file](https://aimeos.org/docs/images/Aimeos-typo3-pages-import.png)
-
-Now you have a new page "Shop" in your page tree including all required sub-pages.
 
 ## License
 
