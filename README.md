@@ -1,6 +1,8 @@
-<a href="https://aimeos.org/">
-    <img src="https://aimeos.org/fileadmin/template/icons/logo.png" alt="Aimeos logo" title="Aimeos" align="right" height="60" />
+<a href="http://www.colorado.edu/studentgroups/vrarclub/">
+    <img src="https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/VRLogo.png" alt="CU VRAR Club logo" title="CU VRAR Club logo" align="Center" height="350" />
 </a>
+
+
 
 Simple Unity Vuforia Application
 ======================
@@ -46,6 +48,7 @@ Install the following programs/packages and create accounts for Unity and Vufori
     2. Setup account
     3.  Download Vuforia Package 
     4.  New Project
+    ![Saving Project Screenshot](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/1_projectsave.png) 
     5. Import Vuforia Package
 2.  Create Vuforia Account
     Login
