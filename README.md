@@ -20,7 +20,7 @@ Please download any software and register for Vuforia accounts before attending 
 - [Installation](#installation)
     - [TER](#typo3-extension-repository)
     - [Composer](#composer)
-- [TYPO3 setup](#typo3-setup)
+- [Vuforia Target Setup](#tVuforia Target Setup)
     - [Extension](#extension)
     - [Database](#database)
 - [Page setup](#page-setup)
@@ -31,6 +31,36 @@ Please download any software and register for Vuforia accounts before attending 
 - [Links](#links)
 
 ## Installation
+
+1. Setup Unity
+    2. Setup account
+    3.  Download Vuforia Package 
+    4.  New Project
+    5. Import Vuforia Package
+2.  Create Vuforia Account
+    Login
+    Add licensce key (development) , create app name, copy license key
+    
+3.  Go back into Unity, drag AR kit, located in... 
+    Drag AR kit prefab into scene
+    click on kit in hiearchy to inspect properties
+    Vuforia behaviour component, click on edit configuration and paste the key into the App Licence Key text field
+
+4.  Go back to Vuforia developer website , and click on Target Manager
+      click create image target database, images that your AR app will recognize,with devices selected
+      Now add a target image, which allows for a flat image, 3D image for recognition
+      We will choose a 2D image for this example
+      For good tracking and image recognition, Vuforia suggests the following, 
+      
+| Attribute | Example |
+| --- | --- |
+| Rich in detail | Street-scene, group of people, collages and mixtures of items, or sport scenes |
+| Good contrast | Has both bright and dark regions, is well lit, and not dull in brightness or color |
+| No repetitive patterns | Grassy field, the front of a modern house with identical windows, and other regular grids and patterns |
+      
+      further info and suggestions for improving image recognition and tracking stability can be found [here](https://library.vuforia.com/articles/Solution/Optimizing-Target-Detection-and-Tracking-Stability)
+
+
 
 ### TYPO3 extension repository
 
@@ -80,9 +110,9 @@ It will install TYPO3 and the latest Aimeos TYPO3 extension in the `./htdocs/` d
 composer update
 ```
 
-## TYPO3 setup
+## Vuforia Target Setup 
 
-### Extension
+### Registration
 
 * Log into the TYPO3 back end
 * Click on ''Admin Tools::Extension Manager'' in the left navigation
@@ -93,7 +123,7 @@ composer update
 
 ![Install Aimeos TYPO3 extension](https://aimeos.org/docs/images/Aimeos-typo3-extmngr-install.png)
 
-### Database
+### Target Setup
 
 Afterwards, you have to execute the update script of the extension to create the required database structure:
 
@@ -144,4 +174,5 @@ license and is available for free.
 
 * [Unity 5.6 Installation](https://unity3d.com/unity/whats-new/unity-5.6.0)
 * [Unity ID Registration](https://id.unity.com/en/conversations/207adc60-e15a-49a3-a9b0-3339b2cae79b012f?view=register)
-* [Vuforia](https://developer.vuforia.com/downloads/sdk)
+* [Vuforia Account Registration](https://developer.vuforia.com/user/register)
+* [Vuforia Unity Package Download](https://developer.vuforia.com/downloads/sdk)
