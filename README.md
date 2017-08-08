@@ -118,83 +118,54 @@ Back on the Target Manager page, the uploaded target will appear with a star rat
 
 After uploading your image targets, click on the Download Database(All) button and select Unity Editor to download image database files into a Unity package. 
 
+Go back into the Unity program and navigate Assets/Import Packages/Custom Packages and select the downloaded Image Database Unity Package.
 
+![Vuforia Target Images 7](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/5_TargetManager_7.png)
 
+After importing all the database image Unity package, the VuforiaConfiguration component should show up with a checkbox to select a database to be loaded.  Click on this option, and click on Activate checkbox that appears next.
 
-### TYPO3 extension repository
+![Vuforia Target Images 8](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/5_TargetManager_8.png)
 
-If you want to install Aimeos into your existing TYPO3 installation, the [Aimeos extension from the TER](https://typo3.org/extensions/repository/view/aimeos) is recommended. You can download and install it directly from the Extension Manager of your TYPO3 instance.
+## Setting up Target Image in Unity
+With the Vuforia Configurations loaded with the image databse set in your Vuforia account, we'll set up a virtual scene for our objects to appear when an image or object is recognized.  
 
-For new TYPO3 installations, there's a 1-click [Aimeos distribution](https://typo3.org/extensions/repository/view/aimeos_dist) available too. Choose the Aimeos distribution from the list of available distributions in the Extension Manager and you will get a completely set up shop system including demo data for a quick start.
+In Unity, navigate to the Assets/Vuforia/Prefabs folder and drag the ImageTarget prefab from the folder to the Hierachy View.  The ImageTarget prefab acts as the recognized image/object target for where our virtual objects will be tracking its position.  If a virtual objects above the ImageTarget, when laptop camera sees our actual image or target in the real world, the AR app will place and track our relative to where the ImageTarget is virtually...  
 
-### Composer
+![Unity Target](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/6_UnityTarget.png)
 
-The latest version can be installed via composer too. This is especially useful if you want to create new TYPO3 installations automatically or play with the latest code. You need to install the [composer](https://getcomposer.org/) package first if it isn't already available:
-```
-php -r "readfile('https://getcomposer.org/installer');" | php -- --filename=composer
-```
+Selecting the ImageTarget in the Hiearchy view, select the image database that was imported from the dropdown menu next to Database.
 
-In order to tell composer what it should install, you have to create a basic `composer.json` file in the directory of you VHost. It should look similar to this one:
+![Unity Target 1](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/6_UnityTarget_1.png)
 
-It will install TYPO3 and the latest Aimeos TYPO3 extension in the `./htdocs/` directory. Afterwards, the Aimeos composer script will be executed which copies some required files and adds a link to the Aimeos extensions placed in the `./ext/` directory. To start installation, execute composer on the command line in the directory where your `composer.json` is stored:
-```
-composer update
-```
+## Setting Up a Virtual Object to be projected
 
-## Vuforia Target Setup 
+Now lets project a virtual object over the our image target when our app recognizes the target.  Click on the Unity Asset Store Tab and click on the Log In button.  After logging in you will access to download free and paid assets from the Asset Store that can be added into your application.  Assets can range from 3D Models, environments, characters, textures, shaders, scripts and many other components used to build a game or application.
 
-### Registration
+![Virtual Asset](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/7_VirtualAsset.png)
 
-* Log into the TYPO3 back end
-* Click on ''Admin Tools::Extension Manager'' in the left navigation
-* Click the icon with the little plus sign left from the Aimeos list entry (looks like a lego brick)
-* If a pop-up opens (only TYPO3 4.x) choose ''Make updates'' and "Close window" after the installation is done
+We will be downloading the free Unity-Chan asset, which is a rigged 3D model with animations.  In the search bar, search for Unity Chan and click on the "Unity-Chan" Model link.
 
-**Caution:** Install the **RealURL extension before the Aimeos extension** to get nice looking URLs. Otherwise, RealURL doesn't rewrite the parameters even if you install RealURL afterwards!
+![Virtual Asset 1](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/7_VirtualAsset_2.png)
 
-![Install Aimeos TYPO3 extension](https://aimeos.org/docs/images/Aimeos-typo3-extmngr-install.png)
+Click on the Import Button and wait for it be loaded into your project.  A popup box will ask which files to import, which you will click All, and Import.
 
-### Target Setup
+After Unity-Chan import is complete, navigate to Assets/UnityChan/Prefabs folder and drag the unitychan prefab into the Hiearchy Window. 
 
-Afterwards, you have to execute the update script of the extension to create the required database structure:
+![Virtual Asset 1](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/7_VirtualAsset_3.png)
 
-![Execute update script](https://aimeos.org/docs/images/Aimeos-typo3-extmngr-update-7.x.png)
+You will see the UnityChan model standing above the imagetarget, so when the app recognizes the target in the real world, the UnityChan model will appear how it is currently placed in Unity.  Right now the image target was set to be a width of .259m (8.5"), and looking at UnityChan in the Unity program, she will be too large to appear on the app screen.  To remedy this we will scale down the size of UnityChan.  
 
-## Page setup
+First click and select UnityChan from the Hiearchy Window.  In the inspector window, change the Transform: Scale x,y,z values to shrink UnityChan.  I chose .25, but you can select modify it to your liking.
 
-The page setup for an Aimeos web shop is easy if you import the [standard page tree](https://aimeos.org/fileadmin/download/Aimeos-pages_two-columns_2.1.6.t3d) into your TYPO3 installation.
+![Virtual Asset 1](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/7_VirtualAsset_4.png)
 
-### Go to the import view
+The last step for setting up our Virtual object, is to drag our object and set it as a child of the ARCamera.  This lets the ARCamera know which gameobject or virtual object should appear when an image/object is recognized.  To set an UnityChan as a child to the ARCamera, simply drag the UnityChan gameobject in the hiearchy, and drop it on top of the ARCamera.  After dropping UnityChan onto the ARCamera, it should be located below the ARCamera as a child gameobject.
 
-* In Web::Page, root page (the one with the globe)
-* Right click on the globe
-* Move the cursor to "Branch actions"
-* In the sub-menu, click on "Import from .t3d"
+### Deploying and Testing the AR App
 
-![Go to the import view](https://aimeos.org/docs/images/Aimeos-typo3-pages-menu.png)
-
-### Upload the page tree file
-
-* In the page import dialog
-* Select the "Upload" tab (2nd one)
-* Click on the "Select" dialog
-* Choose the file you've downloaded
-* Press the "Upload files" button
-
-![Upload the page tree file](https://aimeos.org/docs/images/Aimeos-typo3-pages-upload.png)
-
-### Import the uploaded page tree file
-
-* In Import / Export view
-* Select the uploaded file from the drop-down menu
-* Click on the "Preview" button
-* The pages that will be imported are shown below
-* Click on the "Import" button that has appeared
-* Confirm to import the pages
 
 ## License
 
-The Aimeos TYPO3 extension is licensed under the terms of the GPL Open Source
-license and is available for free.
+
 
 
