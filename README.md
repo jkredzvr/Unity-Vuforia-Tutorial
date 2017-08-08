@@ -5,22 +5,21 @@
 Simple Unity Vuforia Application
 ======================
 
-The repository contains the TYPO3 extension integrating the Aimeos e-commerce
-library into TYPO3. The extension provides plugins for e.g. filter, list and
-detail views, for searching products as well as baskets and the checkout process.
+The repository contains a simple augmented reality application based on Vuforia, built on the Unity Platform.  This app, deployed on a laptop will use the webcamera and Vuforia unity package to recognize a selected image marker and project a 3D model above the marker on the screen.  
 
-[![Aimeos TYPO3 demo](https://aimeos.org/fileadmin/user_upload/typo3-demo.jpg)](http://typo3.demo.aimeos.org/)
+GIF OF RECOGNIZING IMAGE
 
-
-Please download any software and register for Vuforia accounts before attending the event as it will take time to download and install Vuforia.
+Please download any software and register for Vuforia accounts before attending the event as it will take some time to download and install Vuforia.
 
 
 ## Table of content
 
+- [Installation and Account Registration](#install-registration)
+
 - [Installation](#installation)
     - [TER](#typo3-extension-repository)
     - [Composer](#composer)
-- [Vuforia Target Setup](#tVuforia Target Setup)
+- [Vuforia Target Setup](#Vuforia Target Setup)
     - [Extension](#extension)
     - [Database](#database)
 - [Page setup](#page-setup)
@@ -29,6 +28,17 @@ Please download any software and register for Vuforia accounts before attending 
     - [Import the uploaded page tree file](#import-the-uploaded-page-tree-file)
 - [License](#license)
 - [Links](#links)
+
+
+## install-registration
+
+Install the following programs/packages and create accounts for Unity and Vuforia.  Unity Personal Version is a free beginner friendly development platform for 2D, 3D, VR and AR applications.
+
+* [Unity 5.6 Installation](https://unity3d.com/unity/whats-new/unity-5.6.0)
+* [Unity ID Registration](https://id.unity.com/en/conversations/207adc60-e15a-49a3-a9b0-3339b2cae79b012f?view=register)
+* [Vuforia Account Registration](https://developer.vuforia.com/user/register)
+* [Vuforia Unity Package Download](https://developer.vuforia.com/downloads/sdk)
+
 
 ## Installation
 
@@ -170,9 +180,4 @@ Now you have a new page "Shop" in your page tree including all required sub-page
 The Aimeos TYPO3 extension is licensed under the terms of the GPL Open Source
 license and is available for free.
 
-## Links
 
-* [Unity 5.6 Installation](https://unity3d.com/unity/whats-new/unity-5.6.0)
-* [Unity ID Registration](https://id.unity.com/en/conversations/207adc60-e15a-49a3-a9b0-3339b2cae79b012f?view=register)
-* [Vuforia Account Registration](https://developer.vuforia.com/user/register)
-* [Vuforia Unity Package Download](https://developer.vuforia.com/downloads/sdk)
