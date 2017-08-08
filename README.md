@@ -151,15 +151,17 @@ Click on the Import Button and wait for it be loaded into your project.  A popup
 
 After Unity-Chan import is complete, navigate to Assets/UnityChan/Prefabs folder and drag the unitychan prefab into the Hiearchy Window. 
 
-![Virtual Asset 1](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/7_VirtualAsset_3.png)
+![Virtual Asset 2](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/7_VirtualAsset_3.png)
 
 You will see the UnityChan model standing above the imagetarget, so when the app recognizes the target in the real world, the UnityChan model will appear how it is currently placed in Unity.  Right now the image target was set to be a width of .259m (8.5"), and looking at UnityChan in the Unity program, she will be too large to appear on the app screen.  To remedy this we will scale down the size of UnityChan.  
 
 First click and select UnityChan from the Hiearchy Window.  In the inspector window, change the Transform: Scale x,y,z values to shrink UnityChan.  I chose .25, but you can select modify it to your liking.
 
-![Virtual Asset 1](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/7_VirtualAsset_4.png)
+![Virtual Asset 3](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/7_VirtualAsset_4.png)
 
 The last step for setting up our Virtual object, is to drag our object and set it as a child of the ARCamera.  This lets the ARCamera know which gameobject or virtual object should appear when an image/object is recognized.  To set an UnityChan as a child to the ARCamera, simply drag the UnityChan gameobject in the hiearchy, and drop it on top of the ARCamera.  After dropping UnityChan onto the ARCamera, it should be located below the ARCamera as a child gameobject.
+
+![Virtual Asset 3](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/DragUnityChan.gif)
 
 ### Deploying and Testing the AR App
 
