@@ -1,27 +1,23 @@
 <a href="http://www.colorado.edu/studentgroups/vrarclub/">
-    <img src="https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/VRLogo.png" alt="CU VRAR Club logo" title="CU VRAR Club logo" align="Center" height="350" />
+    <img src="https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/VRLogo.png" alt="CU VRAR Club logo" title="CU VRAR Club logo" align="center" height="350" />
 </a>
-
-
 
 Simple Unity Vuforia Application
 ======================
 
-The repository contains a simple augmented reality application based on Vuforia, built on the Unity Platform.  This app, deployed on a laptop will use the webcamera and Vuforia unity package to recognize a selected image marker and project a 3D model above the marker on the screen.  
+The repository contains a simple augmented reality application using [Vuforia](https://vuforia.com), built on the [Unity](unity.com) Platform.  This app, deployed on a laptop, will use the webcamera and Vuforia unity package to recognize a selected image marker and project a 3D model above the marker on the screen.  
 
 GIF OF RECOGNIZING IMAGE
 
-Please download any software and register for Vuforia accounts before attending the event as it will take some time to download and install Vuforia.
-
+Please download and install all software and register for Unity & Vuforia accounts before attending the event.
 
 ## Table of content
 
-- [Installation and Account Registration](#install-registration)
+- [Installation and Account Registration](#installation-and-account-registration)
 
-- [Installation](#installation)
-    - [TER](#typo3-extension-repository)
-    - [Composer](#composer)
-- [Vuforia Target Setup](#Vuforia Target Setup)
+- [Unity Project Setup](#unity-project-setup)
+
+- [Vuforia Target Setup](#vuforia-target-setup)
     - [Extension](#extension)
     - [Database](#database)
 - [Page setup](#page-setup)
@@ -32,9 +28,9 @@ Please download any software and register for Vuforia accounts before attending 
 - [Links](#links)
 
 
-## install-registration
+## Installation and Account Registration
 
-Install the following programs/packages and create accounts for Unity and Vuforia.  Unity Personal Version is a free beginner friendly development platform for 2D, 3D, VR and AR applications.
+Install the following programs/packages and create accounts for Unity and Vuforia.  Unity Personal Version is a free beginner friendly development platform for 2D, 3D, VR and AR applications.  Note: When installing Unity 5.6, it will default to a Unity folder in program files.  If you have downloaded a previous version of Unity and want to keep it, rename the default folder name.  
 
 * [Unity 5.6 Installation](https://unity3d.com/unity/whats-new/unity-5.6.0)
 * [Unity ID Registration](https://id.unity.com/en/conversations/207adc60-e15a-49a3-a9b0-3339b2cae79b012f?view=register)
@@ -42,15 +38,39 @@ Install the following programs/packages and create accounts for Unity and Vufori
 * [Vuforia Unity Package Download](https://developer.vuforia.com/downloads/sdk)
 
 
-## Installation
+## Unity Project Setup
+First open up Unity 5.6 and create a new project in folder location and project name you desire.  Make sure that the Unity project is selected as 3D.
 
-1. Setup Unity
-    2. Setup account
-    3.  Download Vuforia Package 
-    4.  New Project
-    ![Saving Project Screenshot](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/1_projectsave.png) 
-    5. Import Vuforia Package
-2.  Create Vuforia Account
+ ![Saving Project Screenshot](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/1_projectsave.png) 
+
+Once Unity has opened, we will import the Vuforia Unity Package to allow of our Unity Augmented Reality application the ability to recognize images/3D models using the laptop camera, and track and display virtual objects on this image.  Import the Vuforia Unity Package by navigating to Assets/Import Packages/Custom Packages at the top of the menu toolbar.
+
+![Import Package](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/2_import%20vuforia.png) 
+
+Locate the [Vuforia Unity Package](https://developer.vuforia.com/downloads/sdk) downloaded earlier, and click open.
+
+![Import Package 2](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/2_import%20vuforia_2.png) 
+
+An import unity package popup menu will appear asking which files should be imported.  Click on all, then click import.
+
+![Import Package 3](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/2_import%20vuforia_3.png) 
+
+Another popup message will ask you have backed up your project.  Go ahead and click that you have made a copy.
+
+## Vuforia AR Camera Set Up
+Once the Vuforia package has been imported, the Assets/Vuforia folder will appear in the Project Folder located in the bottom panel of the Unity program.  This folder houses scripts and "Prefab" gameobjects of the Vuforia components that can be dragged into your Unity application to build an augmented reality app.  The AR Camera Prefab will give Vuforia access to a camera feed (either laptop, camera, HMD head mount display) and recognized images or "markers" set in your Vuforia account.  Navigate to the Assets/Vuforia/Prefabs folder and drag the ARCamera prefab into either the Hiearchy window or Scene Window.
+
+![AR Cam Setup](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/3_ARCamSetup.png) 
+
+When the ARCamera prefab is dragged into your scene or hierarchy, the gameobject will appear in the hiearchy window indicating that it is now part of scene of your Unity application.  Configure the Vuforia settings to connect with your Vuforia account by first selecting the ARCamera in the hiearchy window to view its components in the Inspector, and then clicking on the Open Vuforia Configuration button in the Vuforia Behaviour Component.
+
+![AR Cam Setup 2](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/3_ARCamSetup_2.png) 
+    
+
+
+
+## Vuforia Licence Key
+
     Login
     Add licensce key (development) , create app name, copy license key
     
