@@ -90,13 +90,9 @@ Go back to Vuforia License Manager page, click on Target Manager link, and click
 
 When the database is created, click on the database link and click on Add Target Button to start adding the images to be recognized.  
 
-![Vuforia Target Images 3](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/5_TargetManager_4.png)
+![Vuforia Target Images 4](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/5_TargetManager_4.png)
 
-
-with devices selected
-      Now add a target image, which allows for a flat image, 3D image for recognition
-      We will choose a 2D image for this example
-      For good tracking and image recognition, Vuforia suggests the following, 
+Vuforia can recognize different types of targets ranging from 2D images, 3D objects, and shapes.  For reliable image recognition and tracking, Vuforia suggests chosing images and objects with the following characteristics: 
       
 | Attribute | Example |
 | --- | --- |
@@ -104,7 +100,24 @@ with devices selected
 | Good contrast | Has both bright and dark regions, is well lit, and not dull in brightness or color |
 | No repetitive patterns | Grassy field, the front of a modern house with identical windows, and other regular grids and patterns |
       
-      further info and suggestions for improving image recognition and tracking stability can be found [here](https://library.vuforia.com/articles/Solution/Optimizing-Target-Detection-and-Tracking-Stability)
+Further information and suggestions for improving image recognition and tracking stability can be found [here](https://library.vuforia.com/articles/Solution/Optimizing-Target-Detection-and-Tracking-Stability).
+
+For this sample app, we will choose the following image.  Download this image or copy it from https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/VuforiaTargetImage.png, and upload it the target Image field.
+
+![Vuforia Target Images 4](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/VuforiaTargetImage.png)
+
+For the width input, enter the actual width (in meters) of the object or image that will be recogized.  Since I will be printing the image on an 8.5" x 11" letter paper, I'll input 8.5" -> .259m.
+
+Lastly give the image target a unique name that will be saved in the database, before clicking on the Add Button
+
+![Vuforia Target Images 5](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/5_TargetManager_5.png)
+
+Back on the Target Manager page, the uploaded target will appear with a star rating indicating whether the target image will be reliably recognized and tracked by the Vuforia software.  If you choose to upload your own 2D images or images of objects, upload several different images and make sure that you have at least 4-5 star ratings or reliable tracking.  Feel free to upload multiple different image targets if you want your app to recognize more than one image/object.
+
+![Vuforia Target Images 6](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/5_TargetManager_6.png)
+
+After uploading your image targets, click on the Download Database(All) button and select Unity Editor to download image database files into a Unity package. 
+
 
 
 
