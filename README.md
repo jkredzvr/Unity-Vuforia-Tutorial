@@ -24,10 +24,10 @@ Please download and install all software and register for Unity & Vuforia accoun
     - [Go to the import view](#go-to-the-import-view)
     - [Import the uploaded page tree file](#import-the-uploaded-page-tree-file)
 
-- [Target Image Setup in Unity](#Setting-up-Target-Image-in-Unity)
-- [Projected Virtual Object Setup](#Setting-Up-a-Virtual-Object-to-be-projected)
-- [Playing the AR App](#Playing-the-AR-App)
-- [Bonus: Changing animations with Voice Control](#Bonus)
+- [Target Image Setup in Unity](#setting-up-target-image-in-unity)
+- [Projected Virtual Object Setup](#setting-up-a-virtual-object-to-be-projected)
+- [Playing the AR App](#playing-the-ar-app)
+- [Bonus: Changing animations with Voice Control](#bonus)
 
 - [License](#license)
 - [Links](#links)
@@ -169,7 +169,7 @@ The last step for setting up our Virtual object, is to drag our object and set i
 
 ![Virtual Asset 3](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/DragUnityChan.gif)
 
-### Playing the AR App
+## Playing the AR App
 
 To test out your app, you will need to print out the target image for the app to recognize.  Click on the Play button above the scene view to start the app in Unity.  If the default camera is properly recognized by Vuforia, you should be able to see the live camera feed in the Unity Gamemode screen.  Hold up the printed target image in front of the camera, and your AR app should recognize the target and generate the Virtual object (Unity-chan for this demo) where you have placed it in your scene.
 
