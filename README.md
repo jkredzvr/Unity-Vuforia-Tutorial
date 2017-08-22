@@ -23,6 +23,12 @@ Please download and install all software and register for Unity & Vuforia accoun
     - [Upload the page tree file](#upload-the-page-tree-file)
     - [Go to the import view](#go-to-the-import-view)
     - [Import the uploaded page tree file](#import-the-uploaded-page-tree-file)
+
+- [Target Image Setup in Unity](#Setting-up-Target-Image-in-Unity)
+- [Projected Virtual Object Setup](#Setting-Up-a-Virtual-Object-to-be-projected)
+- [Playing the AR App](#Playing-the-AR-App)
+- [Bonus: Changing animations with Voice Control](#Bonus)
+
 - [License](#license)
 - [Links](#links)
 
@@ -164,6 +170,22 @@ The last step for setting up our Virtual object, is to drag our object and set i
 ![Virtual Asset 3](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/DragUnityChan.gif)
 
 ### Playing the AR App
+
+To test out your app, you will need to print out the target image for the app to recognize.  Click on the Play button above the scene view to start the app in Unity.  If the default camera is properly recognized by Vuforia, you should be able to see the live camera feed in the Unity Gamemode screen.  Hold up the printed target image in front of the camera, and your AR app should recognize the target and generate the Virtual object (Unity-chan for this demo) where you have placed it in your scene.
+
+You will also notice several buttons on the sides of the Unity Gamemode screen.  Those are pre-made buttons provided by the Unity-Chan object to cycle through Unity-Chan's different facial reactions and poses.
+
+![Virtual Asset 3](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/PlayingARApp.gif)
+
+Voila! Now you have a Unity AR scene that generates a virtual object on a recognizes a target image.  Use this project as a base and modify it to your needs by doing the following:
+
+* Changing the target images with your own images or models in Vuforia
+* Changing the virtual model and animations
+* Controlling the virtual model's animation with button presses or recognized voice keywords
+* Having multiple recognized images/models that generate different interactie virtual objects
+* Deploying the Unity scene as an .exe or mobile app 
+
+## Bonus 
 
 
 ## License
