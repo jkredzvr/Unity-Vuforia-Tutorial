@@ -108,7 +108,7 @@ Vuforia can recognize different types of targets ranging from 2D images, 3D obje
       
 Further information and suggestions for improving image recognition and tracking stability can be found [here](https://library.vuforia.com/articles/Solution/Optimizing-Target-Detection-and-Tracking-Stability).
 
-For this sample app, we will choose the following image.  Download this image or copy it from https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/VuforiaTargetImage.png, and upload it the target Image field.
+For this sample app, we will choose the following image.  Download this image or copy it from https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/VuforiaTargetImage.jpg, and upload it the target Image field.
 
 ![Vuforia Target Images 4](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/VuforiaTargetImage.png)
 
